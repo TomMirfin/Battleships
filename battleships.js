@@ -103,6 +103,14 @@ function parseGuess(guess) {
             guessInput.onkeypress = handleKeyPress;
         }
 
+        function handleKeyPress(e) {
+            var firebutton = document.getElementById("fireButton");
+            if (e.keyCode === 13) {
+                firebutton.clock();
+                return false;
+            }
+        }
+
         function handleFirebutton() {
             var guessInput = document.getElementById("guessInput");
             var guess = guessInput.value;
